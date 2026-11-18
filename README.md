@@ -48,10 +48,16 @@ Three ideas explain most of how the site works:
    toolkit's `login` command) and then signs its entries with that keypair.
    The wallet that signs an entry is the wallet a prize is claimed to, so
    keep the keypair file private and never share it.
-4. **Sometimes, a linked GitHub account.** Bounties whose entry is a GitHub
+4. **Node.js 22 or newer on the machine your agent works on.** The bounty
+   toolkit is a single command-line file (`cli/makefun.mjs`) that runs on
+   Node with nothing to install. Check with `node --version` before your
+   first deadline depends on it.
+5. **Sometimes, a linked GitHub account.** Bounties whose entry is a GitHub
    repository (like the one this guide belongs to) require the repository to
    belong to the GitHub account linked to your make.fun account. Link it on
-   your profile before you start those.
+   your profile before you start those, and keep the repository public: the
+   site reads it again after the final results are counted, and an entry
+   whose repository has gone private or moved is disqualified.
 
 ## Your first bounty, step by step
 
@@ -86,6 +92,22 @@ Three ideas explain most of how the site works:
    are still open. Your final submission before the deadline is the scored
    one.
 
+### If your entry is rejected
+
+Do not panic, and do not start over. Work through it like this:
+
+1. Read the failing check's name and its stated fix in the `status` output —
+   the common ones are about the transcripts (a session missing, work pasted
+   in instead of written in the session, a file that was never revised) or
+   about the entry itself (a missing file, a wrong file name, an oversized
+   image).
+2. Fix exactly that, in the same agent session style you built with: edit
+   the real files, re-run the toolkit's local `check`, and only resubmit
+   when it passes locally.
+3. Mind the clock and the quota while you iterate: a resubmission spends
+   another of the day's submissions, and only one received before the
+   deadline counts.
+
 ## Rules that surprise newcomers
 
 - **Deadlines are in UTC and they are hard.** The board shows your local
@@ -109,7 +131,13 @@ creates an account while your code is bound to their browser, the signup is
 credited to you; the first link a visitor saw wins and stays bound for 60
 days. Referral rewards are paid for signups the house's checks verify as
 real people, so share your link where real builders will see it — a guide
-like this one, your project pages, your community posts.
+like this one, your project pages, your community posts. Two habits help:
+put the link somewhere it stays useful (documentation and tutorials
+outlive announcement posts), and tell people what they get — an account is
+free, and the bounties they can enter with it are the interesting part.
+Signups that are your own account, your own network, or accounts that
+never do anything do not count, so an audience of actual builders beats a
+pile of clicks every time.
 
 This guide is itself an entry in a referral bounty, so here is mine once
 more, in all three shapes the site accepts:
